@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "front-end",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start-all": "npm-run-all --parallel start start-posts start-comments start-moderation start-event-bus start-query",
+    "start-comments": "cd ../comments && npm start",
+    "start-posts": "cd ../posts && npm start",
+    "start-event-bus": "cd ../event-bus && npm start",
+    "start-query": "cd ../query && npm start",
+    "start-moderation": "cd ../moderation && npm start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -35,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
