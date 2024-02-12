@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 const posts = {};
 
 app.get('/posts', (req, res)=>{
-    console.log('Request Received')
+    console.log('Posts: Request Received')
     res.send(posts);
 });
 
@@ -30,7 +30,7 @@ app.post('/posts', async (req, res) => {
 });
 
 app.post('/events', async (req, res) => {
-    console.log('Received Event', req.body.type);
+    console.log('Posts: Received Event', req.body.type);
     res.send({});
 });
 
